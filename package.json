@@ -1,0 +1,18 @@
+{
+  "name": "uniapp-router-h5",
+  "version": "1.0.1",
+  "description": "uniapp-router-h5",
+  "keywords": ["uniapp-router-h5","uniapp-router","uniapp-seo","uni-app","uni-app h5"],
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "run install": "npm install"
+  },
+  "author": "fzl51",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@dcloudio/uni-app": "3.0.0-alpha-4020520240719001",
+    "@dcloudio/uni-h5": "3.0.0-alpha-4020520240719001",
+    "express": "^4.19.2"
+  }
+}

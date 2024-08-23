@@ -1,0 +1,60 @@
+{
+  "../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli-vite/\u0000plugin-vue:export-helper": [
+    "/assets/logo.CYWyW8FD.js"
+  ],
+  "../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli-vite/\u0000vite/modulepreload-polyfill.js": [],
+  "../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli-vite/\u0000vite/preload-helper.js": [],
+  "../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli-vite/node_modules/@dcloudio/uni-app/dist/uni-app.es.js": [
+    "/assets/logo.CYWyW8FD.js"
+  ],
+  "../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli-vite/node_modules/@dcloudio/uni-components/lib/page-meta-head/page-meta-head.vue": [
+    "/assets/logo.CYWyW8FD.js"
+  ],
+  "../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli-vite/node_modules/@dcloudio/uni-components/lib/page-meta/page-meta.vue": [
+    "/assets/logo.CYWyW8FD.js"
+  ],
+  "../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli-vite/node_modules/@dcloudio/uni-h5-vue/dist/vue.runtime.esm.js": [],
+  "../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli-vite/node_modules/@dcloudio/uni-h5/dist/uni-h5.es.js": [],
+  "../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli-vite/node_modules/@dcloudio/uni-h5/style/framework/async.css": [],
+  "../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli-vite/node_modules/@dcloudio/uni-h5/style/framework/base.css": [],
+  "../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli-vite/node_modules/@dcloudio/uni-h5/style/framework/pageHead.css": [],
+  "../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli-vite/node_modules/@dcloudio/uni-h5/style/framework/shadow.css": [],
+  "../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli-vite/node_modules/@dcloudio/uni-i18n/dist/uni-i18n.es.js": [],
+  "../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli-vite/node_modules/@dcloudio/uni-shared/dist/uni-shared.es.js": [],
+  "../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli-vite/node_modules/@vue/shared/dist/shared.esm-bundler.js": [],
+  "../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli-vite/node_modules/vue-router/dist/vue-router.mjs": [],
+  "App.vue": [],
+  "App.vue?vue&type=style&index=0&lang.css": [],
+  "index.html": [],
+  "main.js": [],
+  "manifest-json-js": [],
+  "pages-json-js": [],
+  "pages/index/id.vue": [
+    "/assets/pages-index-id.-gbtis13.js",
+    "/assets/id-Cwnf8wkK.css"
+  ],
+  "pages/index/id.vue?vue&type=style&index=0&scoped=31dd7c63&lang.css": [
+    "/assets/pages-index-id.-gbtis13.js",
+    "/assets/id-Cwnf8wkK.css"
+  ],
+  "pages/index/index.vue": [
+    "/assets/pages-index-index.CKlEbjVq.js",
+    "/assets/index-D2yAmsJx.css"
+  ],
+  "pages/index/index.vue?vue&type=style&index=0&scoped=b86af9e6&lang.css": [
+    "/assets/pages-index-index.CKlEbjVq.js",
+    "/assets/index-D2yAmsJx.css"
+  ],
+  "pages/index/seo.vue": [
+    "/assets/pages-index-seo.CCPussIs.js",
+    "/assets/seo-Cfkw2WuF.css"
+  ],
+  "pages/index/seo.vue?vue&type=style&index=0&scoped=7ea3ba70&lang.css": [
+    "/assets/pages-index-seo.CCPussIs.js",
+    "/assets/seo-Cfkw2WuF.css"
+  ],
+  "router.js": [],
+  "static/logo.png": [
+    "/assets/logo.CYWyW8FD.js"
+  ]
+}
