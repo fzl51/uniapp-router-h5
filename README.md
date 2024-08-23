@@ -37,8 +37,8 @@ npm start
 node main.js
 ```
 
-此时打开 http://localhost:8080 就能看到最终效果 演示效果：https://v.yy2169.com 鼠标右键查看源码看效果
-
+此时打开 http://localhost:8080 鼠标右键查看源码看seo效果
+演示：[https://v.yy2169.com](https://v.yy2169.com)
 ## 使用文档：
 
 ### uniapp_seo目录
@@ -57,11 +57,11 @@ import './router'
 ```js
 //uniapp_seo/router.js
 const seoRoutes = {
-    "/pages/index/h5": "/h5/:name"
+    "/pages/index/id": "/id/:id"
 }
 ```
 
-3. 配置路由方法2: 直接在pages.json 设置(微信小程序端会有提示 可以加条件编译)
+3. 配置路由方法2: 直接在pages.json 设置简单(微信小程序端会有提示 可以加条件编译)
 ```json
 {
     "path": "pages/index/seo",
@@ -74,23 +74,77 @@ const seoRoutes = {
 }
 ```
 
-4. 路由格式：支持动态高级路由(伪静态) /h5/:id 这种路径也支持 /h5 这样的静态路径
+4. 路由格式：支持动态高级路由(伪静态) /id/:id 这种路径也支持 /h5 这样的静态路径
 <br><br>
-5. seo优化
+5. seo优化 在页面级组件直接写下面代码即可
  ```html
-//uniapp_seo/pages/index/h5
+#uniapp_seo/pages/index/seo.vue
 <page-meta>
     <head>
-        <title></title>
+        <title>标题</title>
         <meta name="description" content="uniapp h5 seo搜索引擎优化 支持伪静态" />
         <meta name="keywords" content="uniapp seo,uniapp ssr,uniapp 伪静态" />
     </head>
 </page-meta>
 ```
-6. 动态页面设置不同的meta关键词 页面数据等信息 
+6. 动态页面设置不同的meta关键词 页面数据等信息<br>
+```js
+//uniapp_seo/pages/index/id.vue 具体看这个演示代码
+export default {
+            data() {
+                const idData={
+                    "1": {
+                        "title": "这是文章1的标题 黑神话悟空",
+                        "keywords": "这是文章1的关键词",
+                        "description": "这是文章1的description",
+                        "content": "文章1：黑神话悟空"
+                    },
+                    "2": {
+                        "title": "这是文章2的标题 全红婵",
+                        "keywords": "这是文章2的关键词",
+                        "description": "这是文章2的description",
+                        "content": "文章2：全红婵"
+                    },
+                    "default": {
+                        "keywords": "这是默认的关键词",
+                        "description": "这是默认的描述",
+                        "content": "我是默认的内容"
+                    }
+                }
+                return {
+                    ...idData[this.$route?.params?.id||"default"]
+                }
+            }
+}
+```
+7. 也可以在服务端写代码实现动态路由seo优化 我们[演示项目](https://v.yy2169.com)在服务端实现的.<br>为了减少复杂度我们~~删除了服务端实现部分代码~~。<br>不然一会uni-app项目设置一会在服务端代码设置 人都醉了。<br>
+服务端设置动态路由seo 优点是每次更改不需要重新编译。<br>注意：⚠️服务端实现seo优化就不要在页面组件实现
 
-   
-## 设置
+```js
+//routes.js
+const meta={
+    "/": {
+        "keywords": "这是默认的关键词",
+        "description": "这是默认的描述",
+    },
+    "/id/1": {
+        "title": "这是文章1的标题 黑神话悟空",
+        "keywords": "这是文章1的关键词",
+        "description": "这是文章1的description",
+    }
+}
+const head = meta["/id/1"];//  /id/1 根据请求页面动态获取
+if (head) {
+    let headStr = ''
+    for (const key in head) {
+     headStr += key==='title'?`<title>${head[key]}</title>\n`: `<meta name="${key}" content="${head[key]}">\n`
+    }
+    //finalHtml是routes.js文件里的
+    if (headStr) finalHtml = finalHtml.replace(/(<head[^>]*>)(?!.*<head[^>]*>)/i, `$1\n${headStr}\n`);
+}
+```
+
+## uni-app HBuilder X设置
 
 ### 1.在uniapp设置路由mode:   **history**
 
@@ -101,51 +155,16 @@ const seoRoutes = {
 <img src="./img/1724012956765.jpg">
 
 
-web目录：
+## web 目录
 
-一部分是
-<br><br>支持动态高级路由(伪静态) /h5/:id 这种路径<br><br>
-这是一个演示uni-app如何实现ssr服务器渲染<br><br>
-如何动态路由<br><br>
-不使用uniapp官方指定的云函数来实现
+web是uniapp  HBuilder X选择ssr发行H5项目后生成。直接复制到网站目录即可<br>
 
-`uniapp_ssr_demo` 是解决 [uniapp](https://uniapp.dcloud.net.cn) 项目ssr(服务器端渲染),实现seo的解决方案。
-<br>官方提供了[ssr解决方案](https://doc.dcloud.net.cn/uni-app-x/web/ssr.html) 截止发稿前必须要使用uniCloud 云函数。
-<br>这是实现uniCloud不需要云函数解决方案。
 
-## 安装
-
-```sh
-npm install
-```
-
-**Note:** 关键是需要安装最新的 @dcloudio/uni-app 及 @dcloudio/uni-h5。 <br>
-以后出现版本不兼容的情况 [这里查询](https://github.com/dcloudio/uni-app/tags) 最新版本号
-在package.json修改版本号 执行安装
-
-## 设置
-
-### 1.在uniapp设置路由mode   **history**
-
-<img src="./img/1724013127179.jpg">
-
-### 2.发布的时候设置ssr发行 (vue3才支持)
-
-<img src="./img/1724012956765.jpg">
-
-## 复制生成好的client跟server目录到该项目根目录运行
-
-```sh
-npm start
-```
 
 ## 注意事项
 
 1. 不能有环境代码。详情可以看官方的[说明](https://doc.dcloud.net.cn/uni-app-x/web/ssr.html) 比如 window document
-2. 还有很多api不支持 比如 uni.getSystemInfoSync
-3. App.vue不会调用 需要在main.js挂载钩子
-4. 如果有npm包 需要在服务器上的项目安装一遍
-5. 为每个页面实现不同的meta信息需要自己实现 这个项目只提供uniapp的ssr解决办法。
-6. 注意链接 都是onclik事件
-7. 如果有不兼容的代码 会node报错 不会服务器渲染 但不影响网页运行
-8. ssr很多代码不兼容 多到让你怀疑人生 做好心里准备。
+2. 还有很多api不支持 比如 uni.getSystemInfoSync uni.createSelectorQuery uni.createAnimation
+3. 注意链接是否是onclik事件 需要使用navigator
+4. 如果有不兼容的代码 会node报错 不会服务器渲染 但不影响网页运行
+5. ssr很多代码不兼容 多到让你怀疑人生 做好心里准备。

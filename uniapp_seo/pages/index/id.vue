@@ -44,7 +44,7 @@
 				path: this.$route.path,
 				route: this.$route.meta.route,
 				args: JSON.stringify(this.$route?.params || {}),
-				...this.getID(id)
+				...idData
 			}
 		},
 		onLoad() {},
