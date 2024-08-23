@@ -1,12 +1,12 @@
-# uniapp-router-h5  for  <a href="https://uniapp.dcloud.net.cn">uni-app</a>
+# uniapp-router-h5  for  <a href="https://uniapp.dcloud.net.cn">Uni-app</a> SEO
 
-#### 仅支持uni-app Vue3项目 不支持Vue2 (因为uni-app vue2不支持ssr)
 
 ## uni-app ssr(服务器渲染) + 动态路由(伪静态) + seo优化
+#### 仅支持uni-app Vue3项目 不支持Vue2 (因为uni-app vue2不支持ssr)
 
 ## 用途：
 
-实现uni-app的h5项目的搜索引擎seo优化提高网站排名终极解决方案。
+#### 实现uni-app的h5项目的搜索引擎seo优化提高网站排名终极解决方案。
 
 ## 功能：
 
@@ -119,7 +119,7 @@ export default {
 ```
 7. 也可以在服务端写代码实现动态路由seo优化 我们[演示项目](https://v.yy2169.com)在服务端实现的.<br>为了减少复杂度我们~~删除了服务端实现部分代码~~。<br>不然一会uni-app项目设置一会在服务端代码设置 人都醉了。<br>
 服务端设置动态路由seo 优点是每次更改不需要重新编译。<br>注意：⚠️服务端实现seo优化就不要在页面组件实现
-
+   
 ```js
 //routes.js
 const meta={
@@ -143,6 +143,8 @@ if (head) {
     if (headStr) finalHtml = finalHtml.replace(/(<head[^>]*>)(?!.*<head[^>]*>)/i, `$1\n${headStr}\n`);
 }
 ```
+<br>
+8. uniapp-router-h5 使用了 uni.addInterceptor 拦截器。可以扩展实现路由前置守卫。<br>如果你也使用此拦截器造成冲突。可以将你的拦截器合并进了。也可以删除我们的拦截器 在你的代码里调用 seoHook(args.url);
 
 ## uni-app HBuilder X设置
 
