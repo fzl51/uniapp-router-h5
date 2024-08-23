@@ -163,7 +163,7 @@ web是uniapp  HBuilder X选择ssr发行H5项目后生成。直接复制到网站
 
 
 
-## 注意事项
+## ssr(服务器渲染)注意事项
 
 1. 不能有环境代码。详情可以看官方的[说明](https://doc.dcloud.net.cn/uni-app-x/web/ssr.html) 比如 window document
 2. 还有很多api不支持 比如 uni.getSystemInfoSync uni.createSelectorQuery uni.createAnimation
